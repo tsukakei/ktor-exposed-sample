@@ -26,15 +26,22 @@ repositories {
     mavenLocal()
     jcenter()
     maven { url 'https://kotlin.bintray.com/ktor' }
+    maven { url "https://dl.bintray.com/kotlin/kotlinx" }
     maven { url 'https://kotlin.bintray.com/kotlin-js-wrappers' }
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "io.ktor:ktor-server-netty:$ktor_version"
+    compile "io.ktor:ktor-jackson:$ktor_version"
     compile "ch.qos.logback:logback-classic:$logback_version"
     compile "io.ktor:ktor-server-core:$ktor_version"
     compile "io.ktor:ktor-html-builder:$ktor_version"
     compile "org.jetbrains:kotlin-css-jvm:1.0.0-pre.31-kotlin-1.2.41"
+    compile "io.ktor:ktor-websockets:$ktor_version"
     testCompile "io.ktor:ktor-server-tests:$ktor_version"
+
+    compile "com.h2database:h2:$h2_version"
+    compile "org.jetbrains.exposed:exposed:$exposed_version"
+    compile 'com.zaxxer:HikariCP:2.7.8'
 }
